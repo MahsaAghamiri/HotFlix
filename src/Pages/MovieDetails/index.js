@@ -6,6 +6,7 @@ import MovieDetailsStyle from "./style";
 import { Col, Row } from "antd";
 import EmptyData from "../../Components/ErrorHandeling/EmptyData";
 import Loading from "../../Components/Loading";
+import titleMaker from "../../Helpers/titleMaker";
 
 export default function MovieDetails(){
     const {id} = useParams();
@@ -13,12 +14,14 @@ export default function MovieDetails(){
     const [loading, setLoading] = useState(true);
     useEffect(() => {
         getAPI();
-    },[])
+        titleMaker('');
+    },[id]);
     function getAPI(){
         axios.get(`https://moviesapi.codingfront.dev/api/v1/movies/${id}`)
              .then((res) => {
               setMovieData(res.data);
               setLoading(false);
+              titleMaker(res.data.title);
               window.scrollTo({
                 top: 0,
                 behavior: 'smooth'

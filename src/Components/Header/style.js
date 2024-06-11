@@ -3,27 +3,7 @@ import palet from "../../Style/them";
 
 const HeaderStyle = styled.div`
 .header{
-    .search{
-        backgroun-color: red;
-           .search-box{    
-                min-height: 50px;
-                width: 100%;
-                border-radius: 8px;
-                background-color: #222028;
-                border: 2px solid transparent;
-                font-size: 1.7rem;
-                color: #fff;
-                padding: 0 50px 0 20px;
-                &:focus{
-                    border-color: ${palet.primarycolor};
-                }
-                &:hover{
-                    border-color: ${palet.primarycolor};
-                }
-       
-        }
-
-    }
+    
     position: fixed;
     top: 0;
     left: 0;

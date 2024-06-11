@@ -58,6 +58,9 @@ h2{
 .text-align-center{
     text-align: center;
 }
+.d-none{
+    display: none;
+}
 input:focus {
     outline: none;
 }
