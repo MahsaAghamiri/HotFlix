@@ -30,34 +30,41 @@ const MovieListStyle = styled.div`
 .movie-items{
     padding-top: 30px;
     margin-bottom: 80px;
+    h3{
+    color: ${palet.primarycolor}
+    }
     .item-cover{
         height: 87%;
         width: 100%;
+        position: relative;
         .movies-img{
             width: 100%;
             height: 100%;
             object-fit: fill;
-            opacity: 0.4s;
             border-radius: 8px;
         }
-    // .overlay{
-    //     position: absolute;
-    //     z-index: 1;
-    //     left: 0;
-    //     top: 0;
-    //     width: 80%;
-    //     height: 80%;
-    //     background-color: rgba(0, 0, 0, 0.5);
-    //     opacity: 0;
-    //     visibility: hidden;
-    //     transition: all 1s;
-    // }
-    // &:hover{
-    //     .overlay{
-    //         opacity: 1;
-    //         visibility: visible;
-    //     }
-    // }
+        .overlay{
+        position: absolute;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        opacity: 0;
+        visibility: hidden;
+        transition: all 1s;
+         border-radius: 8px;
+         overflow: hidden;
+    }
+    &:hover{
+        .overlay{
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+
+    }
       
         
     }

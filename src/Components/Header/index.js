@@ -15,7 +15,7 @@ export default function Header(){
                        <Col span={4}>
                             <div className="logo">
                                 <Link to='/'>
-                                    <img src="Images/logo.svg" alt="" />
+                                    <img src="/Images/logo.svg" alt="" />
                                 </Link>
                             </div>
                         </Col>

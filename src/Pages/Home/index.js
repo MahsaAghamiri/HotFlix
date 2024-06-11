@@ -24,8 +24,8 @@ export default function Home(){
                         <div className="section-space"></div>
 
                         <div className="content">
-                            <MovieList page='1' headerDetails={{title:'250 BEST MOVIES', link:'#'}} />
-                            <MovieList page='2' headerDetails={{title:'250 BEST MOVIES', link:'#'}} />
+                            <MovieList page='999' headerDetails={{headerTitle:'250 BEST MOVIES', viewAllLink:'#'}} />
+                            <MovieList page='2' headerDetails={{headerTitle:'250 BEST MOVIES', viewAllLink:'#'}} />
 
                         </div>
                 </section> 
