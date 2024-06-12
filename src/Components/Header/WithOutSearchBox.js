@@ -3,10 +3,10 @@ import {headerMenu} from "../../Data/menu";
 import { Row, Col } from "antd";
 import HeaderStyle from "./style";
 import Menu from "../Menu";
-import SearchBox from "../SearchBox";
 
 
-export default function Header(){
+
+export default function SearchHeader(){
     return( 
       <HeaderStyle> 
         <header className="header">
@@ -20,14 +20,14 @@ export default function Header(){
                                 </Link>
                             </div>
                         </Col>
-                        <Col span={12}>  
+                        <Col span={14}>  
                             <div className="menu">
                                <Menu menuItems={headerMenu} />
                             </div>
                         </Col>
                         
-                        <Col span={8}>
-                            <SearchBox />
+                        <Col span={6}>
+                           
                         </Col>
                     </Row>
                 </Col>

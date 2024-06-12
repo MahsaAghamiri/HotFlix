@@ -81,10 +81,10 @@ export default function MovieDetails(){
             <MovieDetailsStyle>
                 <section className="movie-details">
                     <Row justify="center">
-                        <Col  span={20} offset={2}>
-                            {renderMovieDetails()}
+                        <Col span={20} offset={5}>
+                        {renderMovieDetails()}
                         </Col>
-                    </Row>
+                    </Row>    
                 </section>
             </MovieDetailsStyle>
         </PrimaryLayout>

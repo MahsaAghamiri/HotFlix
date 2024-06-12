@@ -1,12 +1,12 @@
 import { Fragment } from "react";
-import Header from "../../Header";
+import SearchHeader from "../../Header/WithOutSearchBox";
 import Footer from "../../Footer";
- 
 
-export default function PrimaryLayout({children}){
+
+export default function SecondLayout({children}){
     return(
         <Fragment>
-            <Header />        
+            <SearchHeader />
                 {children}
             <Footer />
         </Fragment>
