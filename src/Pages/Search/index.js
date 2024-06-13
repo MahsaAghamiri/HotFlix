@@ -6,6 +6,7 @@ import { useSearchParams, Link, createSearchParams } from "react-router-dom";
 import axios from "axios";
 import Loading from "../../Components/Loading";
 import EmptyData from "../../Components/ErrorHandeling/EmptyData";
+import titleMaker from "../../Helpers/titleMaker";
 
 export default function Search(){
     const [ loading, setLoading ] = useState(true);
@@ -17,6 +18,7 @@ export default function Search(){
     useEffect(() => {
         if(queryParams.get('q') && queryParams.get('q') !== '')
         getApi();
+        titleMaker('250 Top Movies');
     },[]);
     function getApi(value){
         axios.get(`https://moviesapi.codingfront.dev/api/v1/movies?q=${value ? value :queryParams.get('q')}`)
