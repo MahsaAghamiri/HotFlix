@@ -61,6 +61,9 @@ h2{
 .d-none{
     display: none;
 }
+.d-contents{
+    display: contents;
+}
 input:focus {
     outline: none;
 }

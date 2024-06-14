@@ -3,6 +3,8 @@ import Home from '../../Pages/Home';
 import MovieDetails from '../../Pages/MovieDetails';
 import NotFound from '../ErrorHandeling/NotFound';
 import Search from '../../Pages/Search';
+import Genres from '../../Pages/Genres';
+import AllMovies from '../../Pages/AllMovies';
 
 const routs = createBrowserRouter([
     {
@@ -16,6 +18,14 @@ const routs = createBrowserRouter([
     {
         path: '/search',
         element: <Search />
+    },
+    {
+        path: '/genres/:id',
+        element: <Genres />
+    },
+    {
+        path: '/movies',
+        element: <AllMovies />
     },
     {
         path: '*',

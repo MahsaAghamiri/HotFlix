@@ -70,7 +70,7 @@ const SearchStyle = styled.div`
             .poster{
                 width: 15%;
                 height: 70px;
-                display: inline-block;
+                display: inline-block; 
                 img{
                     
                     width: 100%;

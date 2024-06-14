@@ -4,6 +4,7 @@ import titleMaker from "../../Helpers/titleMaker";
 import HomePageStyle from "./style";
 import { Col, Row } from "antd";
 import MovieList from "../../Components/MovieList/MovieList";
+import MovieListByGenres from "../../Components/MovieListByGenres";
 
 export default function Home(){
     useEffect(() => {
@@ -24,8 +25,8 @@ export default function Home(){
                         <div className="section-space"></div>
 
                         <div className="content">
-                            <MovieList page='999' headerDetails={{headerTitle:'250 BEST MOVIES', viewAllLink:'#'}} />
-                            <MovieList page='2' headerDetails={{headerTitle:'250 BEST MOVIES', viewAllLink:'#'}} />
+                            <MovieList page='1' headerDetails={{headerTitle:'250 BEST MOVIES', viewAllLink:'#'}} />
+                            <MovieListByGenres page='1' genre_id={18} headerDetails={{headerTitle:'ANIMATION', viewAllLink:'#'}} />
 
                         </div>
                 </section> 

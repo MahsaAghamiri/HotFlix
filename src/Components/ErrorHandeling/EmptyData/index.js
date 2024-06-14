@@ -1,9 +1,10 @@
-import { Row, Col } from "antd"
+import React from 'react';
+import { Empty, Row, Col } from 'antd';
 
 export default function EmptyData(){
     return(
 
-        <Row justify="center" className="padding-top-loading">
+        <Row justify="center" className="padding-top-loading text-align-center d-contents">
           <Col md={24}>
                 <div className="empty-data text-align-center">
                     <h2>Oops!</h2>

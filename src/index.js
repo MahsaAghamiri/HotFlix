@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import Router from './Components/Router';
 import './globalStyle.css'
 import { ConfigProvider } from 'antd';
-import palet from './Style/them';
+
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
