@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import palet from "../../Style/them";
+import {palet} from "../../Style/them";
 
 const SearchStyle = styled.div`
     .search{

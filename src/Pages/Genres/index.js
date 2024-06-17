@@ -49,7 +49,7 @@ export default function Genres(){
         setLoading(false);
     }catch(e){
         setLoading(false);
-        alert('Please Try Latar!');
+        // alert('Please Try Latar!');
     }
    }
 
