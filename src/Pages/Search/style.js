@@ -3,9 +3,19 @@ import palet from "../../Style/them";
 
 const SearchStyle = styled.div`
     .serach-content{
+        
           padding-bottom: 160px;
           padding-top: 120px;
-          .search-box{    
+          .search{
+             .search-icon{
+                position: absolute;
+                top: 15px;
+                right: 20px;
+                font-size: 25px;
+                color: ${palet.primarycolor};
+            }
+          .search-box{ 
+             
                 min-height: 50px;
                 width: 100%;
                 border-radius: 8px;
@@ -23,10 +33,16 @@ const SearchStyle = styled.div`
                 }
        
             }
+          }
+         
         }
     .movie-items{
     padding-top: 30px;
     margin-bottom: 80px;
+    .pagination{
+        text-align: center;
+        margin-top: 80px;
+    }
     h3{
     color: ${palet.primarycolor}
     }

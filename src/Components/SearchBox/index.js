@@ -1,9 +1,8 @@
 import { Fragment, useState, useEffect, useRef } from "react";
-import axios from "axios";
+import API from "../../Helpers/api";
 import { Link, useNavigate } from "react-router-dom";
 import SearchStyle from "./style";
-import Loading from "../Loading";
-import { Row, Col } from "antd";
+import { SearchOutlined } from "@ant-design/icons";
 
 export default function SearchBox(){
     const setNavigate = useNavigate();
@@ -25,7 +24,7 @@ export default function SearchBox(){
         
         const inputValue = e.target.value.trim();
         if(inputValue.length >= 2){
-            axios.get(`https://moviesapi.codingfront.dev/api/v1/movies?q=${inputValue}`)
+            API.get(`movies?q=${inputValue}`)
             .then((res) => {
                setsearchResult(res.data);
                setLoading(false);
@@ -71,14 +70,15 @@ export default function SearchBox(){
    }
    function onEnter(e){
        if(e.key === 'Enter' && searchInput.current.value !== '' ){
-            setNavigate(`/search?q=${e.target.value.trim()}`);
+            setNavigate(`/search?q=${e.target.value.trim()}&page=1`);
     }
    }
     return(
         <Fragment>
             <SearchStyle>
                 <div className="search">
-                    <input onKeyDown={onEnter} onChange={handleSearch} className='search-box' placeholder="Search..." ref={searchInput} />   
+                    <input onKeyDown={onEnter} onChange={handleSearch} className='search-box' placeholder="Search..." ref={searchInput} /> 
+                    <SearchOutlined className="search-icon" />  
                 </div>
                 <div className="serach-result"  ref={searchResultsRef}>
                 <ul>

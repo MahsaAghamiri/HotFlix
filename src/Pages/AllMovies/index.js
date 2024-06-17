@@ -1,7 +1,7 @@
 import AllMoviesStyle from "./style";
 import { Row, Col, Pagination } from "antd";
 import { useEffect, useState } from "react";
-import axios from "axios";
+import API from "../../Helpers/api";
 import EmptyData from "../../Components/ErrorHandeling/EmptyData";
 import Loading from "../../Components/Loading";
 import { Link, useNavigate, useSearchParams } from "react-router-dom";
@@ -21,7 +21,7 @@ export default function AllMovies(){
         getApi(searchParams.get('page') ? searchParams.get('page') : 1);
     },[searchParams.get('page')]);
     function getApi(pageNumber = 1){
-         axios.get(`https://moviesapi.codingfront.dev/api/v1/movies?page=${pageNumber}`)
+         API.get(`movies?page=${pageNumber}`)
               .then((res) => {
                  setMoviesData(res.data);
                  setLoading(false);

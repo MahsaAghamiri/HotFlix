@@ -7,12 +7,12 @@ export const headerMenu = [
     {
         id: 2,
         title: 'MOVIES',
-        link: '#'
+        link: '/movies'
     },
     {
         id: 1,
         title: 'GENRES',
-        link: '#'
+        link: '/genres'
     },
     {
         id: 1,

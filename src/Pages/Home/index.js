@@ -26,8 +26,8 @@ export default function Home(){
 
                         <div className="content">
                             <MovieList page='1' headerDetails={{headerTitle:'250 BEST MOVIES', viewAllLink:'#'}} />
-                            <MovieListByGenres page='1' genre_id={18} headerDetails={{headerTitle:'ANIMATION', viewAllLink:'#'}} />
-
+                            <MovieListByGenres page='1' genre_id={1} headerDetails={{headerTitle:'CRIM', viewAllLink:'/'}} />
+               
                         </div>
                 </section> 
             </HomePageStyle>   

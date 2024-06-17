@@ -1,9 +1,8 @@
 import { Col, Row } from "antd";
-import axios from "axios";
+import API from "../../Helpers/api";
 import {useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import MovieListStyle from "./style";
-import MultiLoading from "../Loading";
 import EmptyData from "../ErrorHandeling/EmptyData";
 import Loading from "../Loading";
 
@@ -19,7 +18,7 @@ export default function MovieList({headerDetails, page = '1'}){
     getApi();
    },[]);
    function getApi(){
-        axios.get(`https://moviesapi.codingfront.dev/api/v1/movies?page=${page}`)
+        API.get(`movies?page=${page}`)
              .then((res) => {
                 setMoviesData(res.data);
                 setLoading(false);
@@ -33,7 +32,7 @@ export default function MovieList({headerDetails, page = '1'}){
         return( <EmptyData /> )
     }
     return moviesData.data.map(({id, title, poster, genres}) => {    
-       return (<Col key={id}  xs={24} sm={12} md={8} lg={4} xxl={2}>
+       return (<Col key={id}  xs={24} sm={12} md={8} lg={4}>
                     <Link to={`/movie/${id}`} className="custom-link">
                         <div className="item-cover">
                             <img src={poster} alt="" className="movies-img" />

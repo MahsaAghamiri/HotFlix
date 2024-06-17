@@ -1,5 +1,5 @@
 import { Col, Row, Pagination } from "antd";
-import axios from "axios";
+import API from "../../Helpers/api";
 import {useEffect, useState } from "react";
 import { Link, Navigate } from "react-router-dom";
 import MovieListStyle from "./style";
@@ -7,30 +7,66 @@ import EmptyData from "../../Components/ErrorHandeling/EmptyData";
 import Loading from "../../Components/Loading";
 import { useParams, useNavigate, useSearchParams } from "react-router-dom";
 import PrimaryLayout from "../../Components/Layouts/PrimaryLayout";
-
+import titleMaker from "../../Helpers/titleMaker";
 
 export default function Genres(){
    const { id } = useParams();
-//    const {headerTitle, viewAllLink} = headerDetails;
    const navigate = useNavigate();
    const [ searchParams, setSearchParams] = useSearchParams();
    const [loading, setLoading] = useState(true);
+   const [genres, setGenres] = useState([]);
    const [moviesData, setMoviesData] = useState({
     data: [],
     metadata: {}
    });
+ 
+   useEffect(() => {
+    getAPiGenres();
+    titleMaker('250 BEST MOVIES');
+   },[]);
+
    useEffect(() => {
     getApi(searchParams.get('page') ? searchParams.get('page') : 1);
+    
    },[searchParams.get('page')]);
-   function getApi(pageNumber = 1){
-        axios.get(`https://moviesapi.codingfront.dev/api/v1/genres/${id}/movies?page=${pageNumber}`)
-             .then((res) => {
-                setMoviesData(res.data);
-                setLoading(false);
-             })
-             .catch((err) => {
-                setLoading(false);
-             })
+
+   function getAPiGenres(){
+        API.get(`genres`)
+        .then((res) => {
+            setGenres(res.data);
+            // console.log("mahsa");
+            // const title = res.data.find(genre => genre.id === 16);
+            // console.log(title.name);
+        })
+        .catch((err) => {
+        
+        })
+   }
+  async function getApi(pageNumber = 1){
+    try{
+        const response = await   API.get(`genres/${id}/movies?page=${pageNumber}`);
+        setMoviesData(response.data);
+        setLoading(false);
+    }catch(e){
+        setLoading(false);
+        alert('Please Try Latar!');
+    }
+   }
+
+   
+   function renderGenreTitle(){
+    // console.log("mahsa");
+    // console.log(genres);
+    // console.log(genres.find(genre => genre.id === 16));
+    // const title = genres.find(genre => genre.id === 16);
+    // const {id, name} = title;
+    // console.log(name);
+    // const title = genres.find(genre => genre.id === 16);
+    // console.log(title.name);
+    // const filterGenreTitle= genres.filter(item => item.id === id);
+    // return(
+    //     <h2><span className="custom-link title">{filterGenreTitle}</span></h2>
+    // )
    }
    function renderFarm(){ 
     if(moviesData.data.length === 0){
@@ -51,42 +87,41 @@ export default function Genres(){
                 </Col>)    
     })}
     function onPageChange(pageNumber){
-         navigate(`/genres/${id}?page=${pageNumber}`);
+         navigate(`/genre/${id}?page=${pageNumber}`);
     }
     return(
         <PrimaryLayout>
             <MovieListStyle>   
-                {/* <div className="movies-header">
+                <div className="movies-header">
                 <Row justify="center">
                     <Col  span={20} offset={2}>
                         <Row>
-                            <Col md={20} xs={{span:24}}><h2><span className="custom-link title">{headerTitle}</span></h2></Col>
-                            <Col md={4} xs={{span:24}}><Link to={viewAllLink} className="custom-link"><span className="veiwAll">VIEW ALL</span></Link></Col>
+                            <Col md={20} xs={{span:24}}>{renderGenreTitle()}</Col>
+                            <Col md={4} xs={{span:24}}></Col>
                         </Row>
                     </Col>
                 </Row>
-                </div> */}
+                </div>
                 <Row justify="center">
                 <Col  span={20} offset={2}>
-                    <div className="movie-items">
-                    {loading === false ? (<Row gutter={[24, 80]}>{renderFarm()}</Row>) : ( <Loading /> )}
+                    <div className="movies">
+                        {loading === false ? (<Row gutter={[24, 80]}>{renderFarm()}</Row>) : ( <Loading /> )}
+                        <Row justify="center">
+                            <Col  span={20} offset={2}>
+                                <div className="pagination">
+                                    <Pagination onChange={onPageChange} 
+                                                total={moviesData.metadata.total_count} 
+                                                current={moviesData.metadata.current_page} 
+                                                pageSize={moviesData.metadata.per_page} />
+                                </div> 
+                            </Col>
+                        </Row>
                         
-                            <Row justify="center">
-                                <Col  span={20} offset={2}>
-                                    <div className="pagination">
-                                        <Pagination onChange={onPageChange} 
-                                                    total={moviesData.metadata.total_count} 
-                                                    current={moviesData.metadata.current_page} 
-                                                    pageSize={moviesData.metadata.per_page} />
-                                    </div>
-                                </Col>
-                            </Row>
-                       
                     </div>
                 </Col>
                 </Row>
-                <div className="section-space">     
-                </div>
+            
+                
             </MovieListStyle>  
         </PrimaryLayout>
     )

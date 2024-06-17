@@ -5,6 +5,7 @@ import NotFound from '../ErrorHandeling/NotFound';
 import Search from '../../Pages/Search';
 import Genres from '../../Pages/Genres';
 import AllMovies from '../../Pages/AllMovies';
+import AllGenres from '../../Pages/AllGenres';
 
 const routs = createBrowserRouter([
     {
@@ -20,7 +21,11 @@ const routs = createBrowserRouter([
         element: <Search />
     },
     {
-        path: '/genres/:id',
+        path: '/genres',
+        element: <AllGenres />
+    },
+    {
+        path: '/genre/:id',
         element: <Genres />
     },
     {

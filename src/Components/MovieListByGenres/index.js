@@ -1,5 +1,5 @@
 import { Col, Row } from "antd";
-import axios from "axios";
+import API from "../../Helpers/api";
 import {useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import MovieListStyle from "./style";
@@ -7,7 +7,7 @@ import EmptyData from "../ErrorHandeling/EmptyData";
 import Loading from "../Loading";
 
 
-export default function MovieListByGenres({headerDetails,genre_id, page = '1'}){
+export default function MovieListByGenres({headerDetails, genre_id, page = '1'}){
    const {headerTitle, viewAllLink} = headerDetails;
    const [loading, setLoading] = useState(true);
    const [moviesData, setMoviesData] = useState({
@@ -18,7 +18,7 @@ export default function MovieListByGenres({headerDetails,genre_id, page = '1'}){
     getApi();
    },[]);
    function getApi(){
-        axios.get(`https://moviesapi.codingfront.dev/api/v1/genres/${genre_id}/movies?page=${page}`)
+        API.get(`genres/${genre_id}/movies?page=${page}`)
              .then((res) => {
                 setMoviesData(res.data);
                 setLoading(false);
@@ -32,7 +32,7 @@ export default function MovieListByGenres({headerDetails,genre_id, page = '1'}){
         return( <EmptyData /> )
     }
     return moviesData.data.map(({id, title, poster, genres}) => {    
-       return (<Col key={id} xs={24} sm={12} md={8} lg={4} xxl={2}>
+       return (<Col key={id} xs={24} sm={12} md={8} lg={4}>
                     <Link to={`/movie/${id}`} className="custom-link">
                         <div className="item-cover">
                             <img src={poster} alt="" className="movies-img" />
@@ -52,7 +52,7 @@ export default function MovieListByGenres({headerDetails,genre_id, page = '1'}){
                  <Col  span={20} offset={2}>
                     <Row>
                         <Col md={20} xs={{span:24}}><h2><span className="custom-link title">{headerTitle}</span></h2></Col>
-                        <Col md={4} xs={{span:24}}><Link to={`genres/${genre_id}`} className="custom-link"><span className="veiwAll">VIEW ALL</span></Link></Col>
+                        <Col md={4} xs={{span:24}}><Link to={viewAllLink} className="custom-link"><span className="veiwAll">VIEW ALL</span></Link></Col>
                     </Row>
                 </Col>
              </Row>

@@ -3,7 +3,7 @@ import palet from "../../Style/them";
 
 const MovieListStyle = styled.div`
 .movies-header{
-    
+    padding-top: 150px;
     border-bottom: 1px solid #222028;
     .veiwAll{
         display: flex;
@@ -28,7 +28,7 @@ const MovieListStyle = styled.div`
     }
 }
 
-.movie-items{
+.movies{
     .pagination{
     margin-top: 50px;
     text-align: center

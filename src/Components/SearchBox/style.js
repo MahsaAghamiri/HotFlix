@@ -3,8 +3,18 @@ import palet from "../../Style/them";
 
 const SearchStyle = styled.div`
     .search{
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
         position: relative;
         backgroun-color: red;
+           .search-icon{
+                position: absolute;
+                right: 10px;
+                font-size: 20px;
+                color: ${palet.primarycolor};
+            }
            .search-box{    
                 min-height: 50px;
                 width: 100%;
