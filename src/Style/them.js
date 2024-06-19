@@ -5,4 +5,8 @@ export const palet = {
 };
 export const type = {
     mainFont: 'Source',
+    fontSizeMd: '1.6rem;',
+    fontSizeLg: '1.8rem;',
+    lineHeightMd: '26px',
+    lineHeightLg: '30px',
 }

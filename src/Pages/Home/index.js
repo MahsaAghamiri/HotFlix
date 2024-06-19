@@ -5,6 +5,9 @@ import HomePageStyle from "./style";
 import { Col, Row } from "antd";
 import MovieList from "../../Components/MovieList/MovieList";
 import MovieListByGenres from "../../Components/MovieListByGenres";
+import Slider from "../../Components/ImageSilder/ImageSlider";
+import ImageSlider from "../../Components/ImageSilder/SecondImageSlider";
+
 
 export default function Home(){
     useEffect(() => {
@@ -17,10 +20,14 @@ export default function Home(){
                         <div className="hero-section">
                             <Row justify="center">
                                 <Col span={20} offset={5}>
-                                    <div className="hero">jsbhdvajsvxhj cakhsb chs x</div>
+                                    <div className="hero">
+                                        <Slider />
+                                        {/* <ImageSlider /> */}
+                                    </div>
                                 </Col>
                             </Row>
                         </div>
+                   
                         <br />
                         <div className="section-space"></div>
 

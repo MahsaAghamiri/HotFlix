@@ -21,19 +21,11 @@ export const headerMenu = [
     },
 ]
 export const footerMenu = [
+   
     {
         id: 1,
-        title: 'About Us',
-        link: '#'
-    },
-    {
-        id: 2,
         title: 'Contacts',
         link: '#'
-    },
-    {
-        id: 1,
-        title: 'Privacy policy',
-        link: '#'
     }
+   
 ]

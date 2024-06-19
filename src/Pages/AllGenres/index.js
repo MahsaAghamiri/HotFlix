@@ -11,16 +11,21 @@ export default function AllGenres(){
    useEffect(() => {
         getApi();
    },[]);
-   function getApi(){
-        API.get(`genres`)
-        .then((res) => {
-            setGenres(res.data);
-            setLoading(false); 
-        })
-        .catch((err) => {
-            setLoading(false); 
-        })
-   }
+
+async function getApi(){
+        try{
+        const response = await   API.get(`genres`);
+        setGenres(response.data);
+        setLoading(false);
+        window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+        });
+        }catch(e){
+                setLoading(false);
+                
+        }
+}
    function renderFarm(){
         if(genres.length === 0){
                 return( <EmptyData /> )

@@ -10,22 +10,22 @@ export default function Footer(){
             <footer className="footer">
                 <Row justify="center">
                     <Col span={20} offset={2} > 
-                        <Row>
-                            <Col span={4}>
+                        <Row gutter={[24,24]}>
+                            <Col xs={24} lg={4} xxl={4}>
                                     <div className="logo">
                                         <Link to='/'>
                                             <img src="/Images/logo.svg" alt="" />
                                         </Link>
                                     </div>
                             </Col>
-                            <Col span={4} className="copy-right">© HOTFLIX</Col>
-                            <Col span={12} push={8}>
+                            <Col xs={8} lg={4} xxl={4} className="copy-right">© HOTFLIX</Col>
+                            <Col xs={8} lg={12} xxl={14}></Col>
+                            <Col xs={8} lg={2} xxl={2}>
                                     <div className="menu">
                                         <Menu menuItems={footerMenu} />
                                     </div>
                                 
                             </Col>
-                            <Col span={4}></Col>
                         </Row>  
                     </Col>
                 </Row>

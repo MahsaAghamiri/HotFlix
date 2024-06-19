@@ -1,5 +1,6 @@
 import { createGlobalStyle } from "styled-components";
-import { type } from "./them";
+import { palet, type } from "./them";
+
 
 const GlobalStyle = createGlobalStyle`
 @font-face {
@@ -93,10 +94,43 @@ input:focus {
 ::-webkit-scrollbar-thumb:hover {
     background-color: #555;
 }
+@media (min-width: 2200px) {
+    .movie-details  .movie-details-content .text-content .movie-plot{
+        min-height: 300px;
+       
+    }
+    .iDuxj .movie-details .movie-details-content .text-content .movie-plot P{
+             font-size: ${type.fontSizeLg}
+             line-height: ${type.lineHeightLg}
+        }
+}
+@media (min-width: 1200px) {
+    .header .hamburger-menu {
+        display: none;
+    }
+}
+ @media(max-width: 1200px){
+    .header .menu{
+        display: none;
+    }
+        
+}
 @media(max-width: 780px){
     h2{
         font-size: 3rem;
     }
+   
+    .header .menu ul li{
+        font-size: 1.2px; 
+    }
+    .home .hero-section .hero{
+        padding-top: 300px;
+    }
 }
+
+.border-bottom-primarycolor
+{
+     border-bottom: 2px solid ${palet.primarycolor};    
+}}
 `;
 export default GlobalStyle;
