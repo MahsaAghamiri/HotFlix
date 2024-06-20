@@ -113,6 +113,9 @@ input:focus {
     .header .menu{
         display: none;
     }
+    .header .search{
+        padding-top: 20px;
+    }
         
 }
 @media(max-width: 780px){

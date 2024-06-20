@@ -17,7 +17,7 @@ export const headerMenu = [
     {
         id: 1,
         title: 'ABOUT US',
-        link: '#'
+        link: '/aboutus'
     },
 ]
 export const footerMenu = [
@@ -25,7 +25,7 @@ export const footerMenu = [
     {
         id: 1,
         title: 'Contacts',
-        link: '#'
+        link: '/contacts'
     }
    
 ]

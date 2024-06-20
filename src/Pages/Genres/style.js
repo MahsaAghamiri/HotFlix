@@ -1,10 +1,16 @@
 import styled from "styled-components";
-import {palet} from "../../Style/them";
+import {palet, type} from "../../Style/them";
 
 const MovieListStyle = styled.div`
 .movies-header{
     padding-top: 150px;
-    border-bottom: 1px solid #222028;
+    line-height: ${type.lineHeightMd};
+           border-bottom: 1px solid #222028;
+        span{
+            padding:0 20px;
+            border-bottom: 2px solid ${palet.primarycolor};
+        }
+    
     .veiwAll{
         display: flex;
         justify-content: center;
@@ -33,7 +39,7 @@ const MovieListStyle = styled.div`
     margin-top: 50px;
     text-align: center
 }
-    padding-top: 150px;
+    padding-top: 50px;
     margin-bottom: 80px;
     h3{
     color: ${palet.primarycolor}

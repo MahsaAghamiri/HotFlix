@@ -18,7 +18,7 @@ export default function Header(){
     return( 
       <HeaderStyle> 
         <header className="header">
-            <Row justify="center" gutter={[80,24]}>
+            <Row justify="center" gutter={[80,80]}>
                 <Col span={20} offset={2} >
                     <Row>
                        <Col xl={4} lg={6} md={12} xs={12}>

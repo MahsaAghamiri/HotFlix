@@ -34,9 +34,7 @@ export default function Genres(){
         API.get(`genres`)
         .then((res) => {
             setGenres(res.data);
-            // console.log("mahsa");
-            // const title = res.data.find(genre => genre.id === 16);
-            // console.log(title.name);
+           
         })
         .catch((err) => {
         
@@ -55,18 +53,11 @@ export default function Genres(){
 
    
    function renderGenreTitle(){
-    // console.log("mahsa");
-    // console.log(genres);
-    // console.log(genres.find(genre => genre.id === 16));
-    // const title = genres.find(genre => genre.id === 16);
-    // const {id, name} = title;
-    // console.log(name);
-    // const title = genres.find(genre => genre.id === 16);
-    // console.log(title.name);
-    // const filterGenreTitle= genres.filter(item => item.id === id);
-    // return(
-    //     <h2><span className="custom-link title">{filterGenreTitle}</span></h2>
-    // )
+    console.log(genres,'mahsa')
+    const filter = genres.filter(item => item.id === parseInt(id));
+    return filter.map((item) => {
+        return(<h2><span>{item.name}</span></h2>)
+    })
    }
    function renderFarm(){ 
     if(moviesData.data.length === 0){

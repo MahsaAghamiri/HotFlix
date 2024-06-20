@@ -32,8 +32,8 @@ export default function Home(){
                         <div className="section-space"></div>
 
                         <div className="content">
-                            <MovieList page='1' headerDetails={{headerTitle:'250 BEST MOVIES', viewAllLink:'#'}} />
-                            <MovieListByGenres page='1' genre_id={1} headerDetails={{headerTitle:'CRIM', viewAllLink:'/'}} />
+                            <MovieList page='1' headerDetails={{headerTitle:'250 BEST MOVIES', viewAllLink:'/movies'}} />
+                            <MovieListByGenres page='1' genre_id={1} headerDetails={{headerTitle:'CRIM', viewAllLink:'/genres'}} />
                
                         </div>
                 </section> 
