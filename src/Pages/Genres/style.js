@@ -36,8 +36,9 @@ const MovieListStyle = styled.div`
 
 .movies{
     .pagination{
-    margin-top: 50px;
+    margin: 80px 0;
     text-align: center
+    
 }
     padding-top: 50px;
     margin-bottom: 80px;

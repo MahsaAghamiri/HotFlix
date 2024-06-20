@@ -33,7 +33,7 @@ export default function Home(){
 
                         <div className="content">
                             <MovieList page='1' headerDetails={{headerTitle:'250 BEST MOVIES', viewAllLink:'/movies'}} />
-                            <MovieListByGenres page='1' genre_id={1} headerDetails={{headerTitle:'CRIM', viewAllLink:'/genres'}} />
+                            <MovieListByGenres page='1' genre_id={7} headerDetails={{headerTitle:'Fantasy', viewAllLink:'/genre/7'}} />
                
                         </div>
                 </section> 

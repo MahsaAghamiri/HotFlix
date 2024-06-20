@@ -79,6 +79,11 @@ input:focus {
     padding: 20px 0;
     border-top: 1px solid #222028;
 }
+.pagination .ant-pagination-item-active {
+    font-weight: 600;
+    background-color: inherit;
+    border-color: #f9ab00;
+}
 ::selection {
     background: #f9ab00;
     color: #fff;
@@ -126,9 +131,10 @@ input:focus {
     .header .menu ul li{
         font-size: 1.2px; 
     }
-    .home .hero-section .hero{
-        padding-top: 300px;
+    .gYfqze  .home .hero-section .hero{
+        padding-top: 160px;
     }
+
 }
 
 .border-bottom-primarycolor

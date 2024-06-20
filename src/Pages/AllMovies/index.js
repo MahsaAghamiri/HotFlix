@@ -62,10 +62,10 @@ export default function AllMovies(){
                           <Row justify="center">
                                 <Col  span={20} offset={2}>
                                     <div className="pagination">
-                                        <Pagination onChange={onPageChange} 
+                                       <strong><Pagination onChange={onPageChange} 
                                                     total={moviesData.metadata.total_count} 
                                                     current={moviesData.metadata.current_page} 
-                                                    pageSize={moviesData.metadata.per_page} />
+                                                    pageSize={moviesData.metadata.per_page} /></strong>
                                     </div>
                                 </Col>
                             </Row>

@@ -45,22 +45,6 @@ export default function SearchHeader(){
                             </div>
 
                         </Col>
-                       {/* <Col span={4}>
-                            <div className="logo">
-                                <Link to='/'>
-                                    <img src="/Images/logo.svg" alt="" />
-                                </Link>
-                            </div>
-                        </Col>
-                        <Col span={14}>  
-                            <div className="menu">
-                               <Menu menuItems={headerMenu} />
-                            </div>
-                        </Col>
-                        
-                        <Col span={6}>
-                           
-                        </Col> */}
                     </Row>
                 </Col>
             </Row>

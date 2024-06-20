@@ -10,15 +10,15 @@ export const headerMenu = [
         link: '/movies'
     },
     {
-        id: 1,
+        id: 3,
         title: 'GENRES',
         link: '/genres'
     },
     {
-        id: 1,
-        title: 'ABOUT US',
+        id: 4,
+        title: 'ABOUTUS',
         link: '/aboutus'
-    },
+    }
 ]
 export const footerMenu = [
    
