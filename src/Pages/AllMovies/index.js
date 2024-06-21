@@ -25,6 +25,10 @@ export default function AllMovies(){
               .then((res) => {
                  setMoviesData(res.data);
                  setLoading(false);
+                 window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
               })
               .catch((err) => {
                  setLoading(false);

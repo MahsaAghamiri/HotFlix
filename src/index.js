@@ -11,7 +11,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <ConfigProvider theme={{token : {colorPrimary : '#f9ab00'}}}>
         <GlobalStyle />
-     <Router />
+        <Router />
     </ConfigProvider>
 );
 

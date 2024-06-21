@@ -34,6 +34,10 @@ export default function Genres(){
         API.get(`genres`)
         .then((res) => {
             setGenres(res.data);
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
            
         })
         .catch((err) => {
