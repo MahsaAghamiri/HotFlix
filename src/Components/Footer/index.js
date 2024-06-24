@@ -11,15 +11,19 @@ export default function Footer(){
                 <Row justify="center">
                     <Col span={20} offset={2} > 
                         <Row gutter={[24,24]}>
-                            <Col xs={24} lg={4} xxl={4}>
+                            {/* <Col xs={4} lg={4} xxl={4}>
                                     <div className="logo">
                                         <Link to='/'>
                                             <img src="/Images/logo.svg" alt="" />
                                         </Link>
                                     </div>
+                            </Col> */}
+                            <Col xs={8} lg={8} xxl={8} className="copy-right">
+                            {/* © HOTFLIX */}
                             </Col>
-                            <Col xs={8} lg={4} xxl={4} className="copy-right">© HOTFLIX</Col>
                             <Col xs={8} lg={12} xxl={14}></Col>
+
+
                             <Col xs={8} lg={2} xxl={2}>
                                     <div className="menu">
                                         <Menu menuItems={footerMenu} />

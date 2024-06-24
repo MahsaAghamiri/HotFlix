@@ -39,7 +39,7 @@ export default function AllMovies(){
          return( <EmptyData /> )
      }
      return moviesData.data.map(({id, title, poster, genres}) => {    
-        return (<Col key={id}  xs={24} sm={12} md={8} lg={4} xxl={2}>
+        return (<Col key={id}  xs={12} sm={12} md={8} lg={4} xxl={4}>
                      <Link to={`/movie/${id}`} className="custom-link">
                          <div className="item-cover">
                              <img src={poster} alt="" className="movies-img" />

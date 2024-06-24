@@ -27,6 +27,9 @@ const AllMoviesStyle = styled.div`
             height: 100%;
             object-fit: fill;
             border-radius: 8px;
+            .pagination{
+                margin-top: 50px;
+            }
         }
         .overlay{
         position: absolute;

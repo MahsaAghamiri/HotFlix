@@ -134,6 +134,7 @@ input:focus {
     .gYfqze  .home .hero-section .hero{
         padding-top: 160px;
     }
+  
 
 }
 

@@ -9,11 +9,11 @@ const FooterStyle = styled.div`
     position: fixed;
     bottom: 0;
     left: 0;
-    width: 100%;
+    width: 100%; 
     background-color: ${palet.headerbgColor}; 
     border-top: 1px solid #222028;
     z-index: 10;
-    padding: 25px 0 15px 0;
+    padding: 7px 0 10px 0;
     align-items: center;
     .logo{
         img{

@@ -42,9 +42,7 @@ const SearchStyle = styled.div`
         top: 100%;    
         left: 0;
         background-color: ${palet.bgColor};
-        adding: 10px;
         border-radius: 8px;
-        padding-top: 15px;
         &::-webkit-scrollbar {
             width: 4px;
              }

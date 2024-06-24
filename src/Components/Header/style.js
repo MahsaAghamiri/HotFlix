@@ -11,7 +11,7 @@ const HeaderStyle = styled.div`
     background-color:  ${palet.headerbgColor};
     border-bottom: 1px solid #222028;
     z-index: 10;
-    padding: 25px 0 15px 0;
+    padding: 17px 0 12px 0;
     align-items: center;
     .logo{
         img{
